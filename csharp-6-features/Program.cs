@@ -25,6 +25,13 @@ namespace csharp_6_features
             rectangle5.Log(Console.Write);
             Console.WriteLine();
 
+            Console.Write("Logger exception handler first parameter null:");
+            rectangle5.Log(null, Console.Write);
+            Console.WriteLine();
+            Console.Write("Logger exception handler second parameter null");
+            rectangle5.Log(Console.Write, null);
+            Console.WriteLine();
+
             Console.WriteLine();
 
             Console.WriteLine("============== Rectangle C# 6.0 Version ==============");
@@ -33,7 +40,6 @@ namespace csharp_6_features
             Console.WriteLine("Height set by property default value: {0}", rectangle6.Height);
             Console.WriteLine("Area calculated in property expression using static import: {0}", rectangle6.Area);
             Console.WriteLine("ToString() using property nameof compile-time function: {0}", rectangle6);
-            Console.WriteLine();
 
             Console.Write("Logger null: ");
             rectangle6.Log(null);
@@ -41,6 +47,13 @@ namespace csharp_6_features
 
             Console.Write("Logger not null: ");
             rectangle6.Log(Console.Write);
+            Console.WriteLine();
+
+            Console.Write("Logger exception handler first parameter null:");
+            rectangle6.Log(null, Console.Write);
+            Console.WriteLine();
+            Console.Write("Logger exception handler second parameter null");
+            rectangle6.Log(Console.Write, null);
             Console.WriteLine();
 
             Console.WriteLine("Press return to exit");

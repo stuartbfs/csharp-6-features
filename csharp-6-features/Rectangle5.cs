@@ -33,13 +33,42 @@ namespace csharp_6_features
             this.height = height;
         }
 
-        /// <summary>Log the Rectange if the logger is valid</summary>
+        /// <summary>Log the Rectangle if the logger is valid</summary>
         /// <param name="logger">Logger Action</param>
         public void Log(Action<string> logger)
         {
             if (logger != null)
             {
                 logger(this.ToString());
+            }
+        }
+
+        public void Log(Action<string> logger1, Action<string> logger2)
+        {
+            try
+            {
+                if (logger1 == null)
+                {
+                    throw new ArgumentNullException("logger1");
+                }
+                Log(logger1);
+
+                if (logger2 == null)
+                {
+                    throw new ArgumentNullException("logger2");
+                }
+                Log(logger2);
+            }
+            catch (ArgumentNullException arg)
+            {
+                // Exception block contains if statement
+                if (arg.ParamName == "logger1")
+                {
+                    Console.Write("logger1 is null");
+                } else if (arg.ParamName == "logger2")
+                {
+                    Console.Write("logger2 is null");
+                }
             }
         }
 

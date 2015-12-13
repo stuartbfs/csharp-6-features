@@ -15,5 +15,7 @@ namespace csharp_6_features
         int Area { get; }
 
         void Log(Action<string> logger);
+
+        void Log(Action<string> logger1, Action<string> logger2);
     }
 }
