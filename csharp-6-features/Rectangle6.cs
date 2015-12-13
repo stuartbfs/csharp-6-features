@@ -35,6 +35,13 @@ namespace csharp_6_features
             this.Height = height;
         }
 
+        /// <summary>Log the Rectange if the logger is valid</summary>
+        /// <param name="logger">Logger Action</param>
+        public void Log(Action<string> logger)
+        {
+            logger?.Invoke(this.ToString());
+        }
+
         /// <summary>ToString() property names are calculated at compile time in a string interpolation</summary>
         /// <returns>String value</returns>
         public override string ToString()

@@ -13,5 +13,7 @@ namespace csharp_6_features
         int Height { get; }
 
         int Area { get; }
+
+        void Log(Action<string> logger);
     }
 }
